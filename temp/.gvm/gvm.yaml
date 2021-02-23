@@ -1,0 +1,3 @@
+GOPATH: ""
+GOROOT: ""
+GOHOME: "/usr/local/go" # 放go sdk /usr/local/go/go1.9.2
