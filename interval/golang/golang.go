@@ -101,12 +101,12 @@ var defaultVersions = []string{
 var client = http.Client{
 	Transport: &http.Transport{
 		DialContext: func(ctx context.Context, network, addr string) (net.Conn, error) {
-			return net.DialTimeout(network, addr, conf.Timeout/3)
+			return net.DialTimeout(network, addr, conf.Timeout.Duration()/3)
 		},
 	},
 	CheckRedirect: nil,
 	Jar:           nil,
-	Timeout:       conf.Timeout * 2 / 3,
+	Timeout:       conf.Timeout.Duration() * 2 / 3,
 }
 
 func getHTML() (html []byte, err error) {
